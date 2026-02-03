@@ -4,10 +4,16 @@ export interface Note {
   tag: NoteTag;
   id: string;
   createdAt: string;
-  updatedAt: string; 
-
+  updatedAt: string;
 }
 
 export type NoteTag = 'Todo' | 'Work' | 'Personal' | 'Meeting' | 'Shopping';
 
-export type NotePost = Omit<Note, 'id'>;
+export type NoteId = Note['id'];
+
+
+export type NotePost = {
+  title: string;
+  content: string;
+  tag: NoteTag;
+};
